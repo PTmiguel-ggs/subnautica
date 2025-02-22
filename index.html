@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efeito de Bolhas</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+<body>
+    <div class="container">
+        <div class="story-box">
+            <h1>Historia de Subnautica</h1>
+            <p>A história de Subnautica começa com o acidente de uma nave chamada Aurora, que viajava para o planeta 4546B, um mundo coberto por vastos oceanos. O jogador assume o papel de Ryley Robinson, o único sobrevivente do desastre, que encontra-se isolado em meio ao oceano alienígena após a queda da nave.
+                <br>Logo, ele percebe que o planeta está cheio de mistérios e perigos, como criaturas marinhas exóticas e os restos de uma antiga civilização alienígena, os Precursores. Conforme o jogador explora o fundo do mar e os biomas subaquáticos, ele descobre sinais de que uma doença alienígena chamada Kharaa está se espalhando pelo planeta, afetando tanto a fauna local quanto os Precursores.
+                <br>Além disso, o jogador precisa lidar com o desafio da sobrevivência — gerenciando recursos limitados, como oxigênio, comida e água — enquanto tenta reparar e utilizar a tecnologia da nave e das ruínas para escapar do planeta. Ao longo da jornada, ele constrói bases subaquáticas, cria veículos e enfrenta a ameaça de radiação, tudo enquanto busca respostas sobre o que realmente aconteceu com a Aurora e como escapar do planeta.
+                <br>O jogo mistura exploração, sobrevivência e mistério, com o jogador constantemente descobrindo mais sobre a história do planeta e a catástrofe que levou a nave a cair ali, enquanto tenta encontrar uma maneira de escapar antes que os recursos se esgotem e o planeta se torne ainda mais hostil.</p>
+        </div>
+    </div>
+
+    <button id="button">Clique para ver as bolhas</button>
+
+    <script>
+        // Função para gerar bolhas
+        function createBubbles() {
+            const numberOfBubbles = 50; // Número reduzido de bolhas para melhorar o desempenho
+
+            for (let i = 0; i < numberOfBubbles; i++) {
+                const bubble = document.createElement('div');
+                bubble.classList.add('bubble');
+
+                // Tamanho aleatório das bolhas
+                const size = Math.random() * 40 + 20; // Tamanho entre 20px e 60px
+                bubble.style.width = `${size}px`;
+                bubble.style.height = `${size}px`;
+
+                // Posição aleatória na parte inferior da tela
+                const x = Math.random() * window.innerWidth; // Posição aleatória X
+                const y = window.innerHeight; // Posição Y inicial (parte inferior)
+                bubble.style.left = `${x}px`;
+                bubble.style.top = `${y}px`;
+
+                // A duração aleatória da animação (mais lenta)
+                const animationDuration = Math.random() * 7 + 8; // Duração entre 8 e 15 segundos
+                bubble.style.animationDuration = `${animationDuration}s`;
+
+                // Adicionando a bolha à tela
+                document.body.appendChild(bubble);
+
+                // Remover bolhas após a animação
+                setTimeout(() => {
+                    bubble.remove();
+                }, animationDuration * 1000); // Tempo da animação em milissegundos
+            }
+
+            // Segunda onda de bolhas (após 2 segundos)
+            setTimeout(createBubbles, 2000); // 2 segundos de delay para a segunda onda
+        }
+
+        // Adicionando evento de clique no botão
+        const button = document.getElementById('button');
+        button.addEventListener('click', createBubbles);
+    </script>
+</body>
+</html>
