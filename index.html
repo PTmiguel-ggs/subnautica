@@ -21,45 +21,63 @@
     <button id="button">Clique para ver as bolhas</button>
 
     <script>
-        // Função para gerar bolhas
+        let ligado = false;
         function createBubbles() {
-            const numberOfBubbles = 50; // Número reduzido de bolhas para melhorar o desempenho
+            const numberOfBubbles = 50; 
 
             for (let i = 0; i < numberOfBubbles; i++) {
                 const bubble = document.createElement('div');
                 bubble.classList.add('bubble');
 
-                // Tamanho aleatório das bolhas
-                const size = Math.random() * 40 + 20; // Tamanho entre 20px e 60px
+              
+                const size = Math.random() * 40 + 20; 
                 bubble.style.width = `${size}px`;
                 bubble.style.height = `${size}px`;
 
-                // Posição aleatória na parte inferior da tela
-                const x = Math.random() * window.innerWidth; // Posição aleatória X
-                const y = window.innerHeight; // Posição Y inicial (parte inferior)
+                
+                const x = Math.random() * window.innerWidth; 
+                const y = window.innerHeight; 
                 bubble.style.left = `${x}px`;
                 bubble.style.top = `${y}px`;
 
-                // A duração aleatória da animação (mais lenta)
-                const animationDuration = Math.random() * 7 + 8; // Duração entre 8 e 15 segundos
+               
+                const animationDuration = Math.random() * 7 + 8; 
                 bubble.style.animationDuration = `${animationDuration}s`;
 
-                // Adicionando a bolha à tela
+              
                 document.body.appendChild(bubble);
 
-                // Remover bolhas após a animação
+             
                 setTimeout(() => {
                     bubble.remove();
-                }, animationDuration * 1000); // Tempo da animação em milissegundos
+                }, animationDuration * 1000);
             }
 
-            // Segunda onda de bolhas (após 2 segundos)
-            setTimeout(createBubbles, 2000); // 2 segundos de delay para a segunda onda
+           
+            setTimeout(createBubbles, 2000);
         }
 
-        // Adicionando evento de clique no botão
+        function ativarBolhas() {
+            if (ligado) {
+            
+                ligado = false;
+                console.log('Bolhas desligadas');
+
+               
+                
+                const allBubbles = document.querySelectorAll('.bubble');
+                allBubbles.forEach(bubble => bubble.remove());
+
+            } else {
+                
+                ligado = true;
+                console.log('Bolhas ligadas');
+                createBubbles();
+            }
+        }
+
         const button = document.getElementById('button');
-        button.addEventListener('click', createBubbles);
+        button.addEventListener('click', ativarBolhas);
     </script>
 </body>
 </html>
