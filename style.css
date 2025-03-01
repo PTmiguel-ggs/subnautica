@@ -89,3 +89,9 @@ h1, p {
     padding: 10px;
     background-color: transparent; /* Garante que o fundo do texto não seja colorido */
 }
+
+
+@media screen  and (max-width: 1024px){
+
+    
+}
