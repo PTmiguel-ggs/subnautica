@@ -1,22 +1,30 @@
 /* Corpo da página */
 body {
+    position: absolute;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     height: 100vh;
-    background-color: #1e2a47; /* Cor de fundo para simular fundo do oceano */
+    background-color: #1e2a47;
+    /* Cor de fundo para simular fundo do oceano */
     position: relative;
     overflow: hidden;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    /* Centraliza o texto */
     color: white;
     background-image: url("https://www.nintendo.com/eu/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_Subnautica_image1600w.jpg");
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-attachment: fixed; /* Faz com que a imagem fique fixa durante o scroll */
+    background-size: cover;
+    /* Faz a imagem cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-attachment: fixed;
+    /* Faz com que a imagem fique fixa durante o scroll */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column; /* Faz a página ter uma direção vertical */
+    flex-direction: column;
+    /* Faz a página ter uma direção vertical */
+    animation: none;
 }
 
 /* Caixa da história */
@@ -31,33 +39,42 @@ body {
     text-align: left;
     color: white;
     position: absolute;
-    left: 50px; /* Alinha à esquerda */
-    top: 15%; /* Eleva a caixa um pouco para ficar mais para cima */
+    left: 50px;
+    /* Alinha à esquerda */
+    top: 15%;
+    /* Eleva a caixa um pouco para ficar mais para cima */
 }
 
 /* Estilo das bolhas */
 .bubble {
     position: absolute;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, rgba(26, 76, 243, 0.7) 70%); /* Gradiente com centro branco e azul nas bordas */
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, rgba(26, 76, 243, 0.7) 70%);
+    /* Gradiente com centro branco e azul nas bordas */
     border-radius: 50%;
     opacity: 0;
-    animation: bubble-animation 6s infinite linear; /* Animação das bolhas */
-    pointer-events: none; /* Impede que as bolhas interfiram nos cliques */
+    animation: bubble-animation 6s infinite linear;
+    /* Animação das bolhas */
+    pointer-events: none;
+    /* Impede que as bolhas interfiram nos cliques */
+    z-index: 9999;
 }
 
 /* Animação das bolhas */
 @keyframes bubble-animation {
     0% {
-        transform: scale(0.3) translateY(0); /* Tamanho menor no início */
+        transform: scale(0.3) translateY(0);
+        /* Tamanho menor no início */
         opacity: 1;
     }
 
     50% {
-        transform: scale(0.8) translateY(-30vh); /* Bolha cresce menos e sobe até 30% da tela */
+        transform: scale(0.8) translateY(-30vh);
+        /* Bolha cresce menos e sobe até 30% da tela */
     }
 
     100% {
-        transform: scale(0.6) translateY(-75vh); /* Bolhas vão até 75% da altura da tela */
+        transform: scale(0.6) translateY(-75vh);
+        /* Bolhas vão até 75% da altura da tela */
         opacity: 0;
     }
 }
@@ -66,7 +83,8 @@ body {
 #button {
     position: absolute;
     top: 50%;
-    left: 20px; /* Botão à esquerda */
+    left: 20px;
+    /* Botão à esquerda */
     transform: translateY(-50%);
     padding: 10px 20px;
     font-size: 14px;
@@ -81,17 +99,39 @@ body {
 /* Garantir que o texto fique visível */
 .container {
     position: relative;
-    z-index: 10; /* Garante que o conteúdo fique sobre a imagem */
+    z-index: 10;
+    /* Garante que o conteúdo fique sobre a imagem */
 }
 
-h1, p {
+h1,
+p {
     margin: 0;
     padding: 10px;
-    background-color: transparent; /* Garante que o fundo do texto não seja colorido */
+    background-color: transparent;
+    /* Garante que o fundo do texto não seja colorido */
 }
 
+@media (max-width: 800px) {
 
-@media screen  and (max-width: 1024px){
+    body {
 
-    
+        position: fixed ;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background-image: url('https://m.media-amazon.com/images/M/MV5BZGIzMzI4NjMtNzZlYi00MDBiLTliN2QtYjk4M2FmODA0NDBhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg');
+    }
+
+    #button {
+        width: 84vw;
+        top: 0;
+        left: 0;
+        height: 50px;
+
+    }
+
+    .story-box {
+        position: initial;
+         max-width: 80vw;
+    }
 }
