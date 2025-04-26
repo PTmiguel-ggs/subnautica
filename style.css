@@ -29,21 +29,20 @@ body {
 
 /* Caixa da história */
 .story-box {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    width: 300px;
-    height: 300px;
-    border-radius: 15px;
-    overflow: auto;
-    margin-bottom: 20px;
-    text-align: left;
-    color: white;
-    position: absolute;
-    left: 50px;
-    /* Alinha à esquerda */
-    top: 15%;
-    /* Eleva a caixa um pouco para ficar mais para cima */
+   background-color: rgba(0, 0, 0, 0.5);
+   padding: 20px;
+   width: 500px;
+   height: 520px;
+   border-radius: 15px;
+   overflow: auto;
+   margin-bottom: 20px;
+   text-align: left;
+   color: white;
+   position: relative;
+   left: 336px;
+   top: -13%;
 }
+
 
 /* Estilo das bolhas */
 .bubble {
@@ -80,11 +79,9 @@ body {
 }
 
 /* Estilo do botão */
-#button {
-    position: absolute;
-    top: 50%;
-    left: 20px;
-    /* Botão à esquerda */
+#button {    position: absolute;
+    top: 77%;
+    left: -153px;
     transform: translateY(-50%);
     padding: 10px 20px;
     font-size: 14px;
@@ -93,8 +90,7 @@ body {
     border-radius: 10px;
     color: white;
     cursor: pointer;
-    z-index: 10;
-}
+    z-index: 10;    }
 
 /* Garantir que o texto fique visível */
 .container {
@@ -131,7 +127,17 @@ p {
     }
 
     .story-box {
-        position: initial;
-         max-width: 80vw;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        width: 300px;
+        height: 328px;
+        border-radius: 15px;
+        overflow: auto;
+        margin-bottom: 20px;
+        text-align: left;
+        color: white;
+        position: relative;
+        left: -20px;
+        top: 8%;
+     } 
     }
-}
