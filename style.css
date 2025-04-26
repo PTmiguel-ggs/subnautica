@@ -25,24 +25,24 @@ body {
     flex-direction: column;
     /* Faz a página ter uma direção vertical */
     animation: none;
+    
 }
 
 /* Caixa da história */
 .story-box {
-   background-color: rgba(0, 0, 0, 0.5);
-   padding: 20px;
-   width: 500px;
-   height: 520px;
-   border-radius: 15px;
-   overflow: auto;
-   margin-bottom: 20px;
-   text-align: left;
-   color: white;
-   position: relative;
-   left: 336px;
-   top: -13%;
-}
-
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    width: 597px;
+    height: 456px;
+    border-radius: 15px;
+    overflow: auto;
+    margin-bottom: 20px;
+    text-align: left;
+    color: white;
+    position: relative;
+    left: 338px;
+    top: -10%; 
+ }
 
 /* Estilo das bolhas */
 .bubble {
@@ -101,6 +101,7 @@ body {
 
 h1,
 p {
+    text-align: justify;
     margin: 0;
     padding: 10px;
     background-color: transparent;
