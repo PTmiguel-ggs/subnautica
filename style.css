@@ -108,6 +108,32 @@ p {
     /* Garante que o fundo do texto não seja colorido */
 }
 
+#botaoTopoEsquerdo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #000;
+  padding: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#botaoTopoEsquerdo:hover {
+  transform: scale(1.1);
+  background-color: #222;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+#botaoTopoEsquerdo svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+  transform: rotate(180deg); /* Aponta para a esquerda */
+}
 @media (max-width: 800px) {
 
     body {
